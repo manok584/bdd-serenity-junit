@@ -7,8 +7,9 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Sample Serenity BDD project using JUnit</name>
-
+    <name>Sample Serenity BDD project using JUnit- GoogleSearchTest</name>
+    
+<!-- https://github.com/serenity-bdd/serenity-junit-starter -->
     <properties>
         <serenity.version>2.2.8</serenity.version>
         <serenity.maven.version>2.2.8</serenity.maven.version>
