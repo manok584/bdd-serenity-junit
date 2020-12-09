@@ -9,6 +9,10 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Steps;
+import pages.HomePage;
+
+
 
 @RunWith(SerenityRunner.class)
 public class OrangeHRMLoginTest extends PageObject {
@@ -16,18 +20,17 @@ public class OrangeHRMLoginTest extends PageObject {
 	@Managed
 	WebDriver driver;
 	
+	@Steps
+	HomePage homepage;
+	
 	@Test
 	public void login() {
 		
 		driver.get("https://opensource-demo.orangehrmlive.com/");
-		typeInto(driver.findElement(By.id("txtUsername")), "Admin");
+		homepage.verifyPageTitle();
+		homepage.enterLoginCredentials();
+		homepage.verifyPageTitle();
 		
-		WebElementFacade password = $(By.id("txtPassword"));
-//		password.type("admin123");
-		password.typeAndEnter("admin123");
-		waitABit(4000);
-	
-
 	}
 
 }
